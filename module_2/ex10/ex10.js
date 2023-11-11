@@ -13,17 +13,19 @@ function vote(numberVoters, listCandidate){
   console.log(numberVoters, listCandidate)
   for (let no = 1; no <= numberVoters; no++){
     let vote = prompt("Input the candidate's name you want to vote");
-    for (let i = 0; i < listCandidate.length; i++){
-      if (vote === listCandidate[i]['name']){
-        listCandidate[i]['votes'] += 1;
+    if (vote !== ''){
+      for (let i = 0; i < listCandidate.length; i++){
+        if (vote === listCandidate[i]['name']){
+          listCandidate[i]['votes'] += 1;
+        }
       }
     }
   }
   return listCandidate;
 }
 let numberCandidate = parseInt(prompt('Input the number of candidates'));
-let numberVoters = parseInt(prompt('Input the number of voters'));
 let listCandidate = storeCandidate(numberCandidate);
+let numberVoters = parseInt(prompt('Input the number of voters'));
 listCandidate = vote(numberVoters, listCandidate);
 
 listCandidate.sort((a, b) => b.votes - a.votes);
