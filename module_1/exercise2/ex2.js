@@ -1,3 +1,3 @@
 'use strict';
 let name = prompt('What is your name');
-console.log(`Hello, ${name}!`);
+document.querySelector('#result').innerHTML = `Hello, ${name}!`;
