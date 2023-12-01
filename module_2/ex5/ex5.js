@@ -5,6 +5,7 @@ let listNum = [];
 while (true){
   let number = parseFloat(prompt('Input a number'));
   if (listNum.includes(number)){
+    alert('The number has already been given')
     break;
   }
   listNum.push(number);
